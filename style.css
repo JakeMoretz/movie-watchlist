@@ -1,0 +1,115 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+}
+
+.header {
+    margin-top: -80px;
+}
+
+.header-img {
+    height: 500px;
+    width: 100vw;
+    opacity: 0.1;
+    position: relative;
+}
+
+.header-text {
+    color: white;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 130px;
+}
+
+.title {
+    margin-left: 100px;
+    font-size: 4em;
+}
+
+.my-watchlist {
+    margin-right: 100px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    background-color: #39393a;
+    z-index: 1000;
+    border: none;
+    color: rgb(182, 180, 180);
+    font-size: 1.2em;
+    padding-inline: 20px;
+    padding-left: 60px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.btn {
+    width: 200px;
+    background-color: #5e5d5d;
+    z-index: 1000;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    font-weight: 300;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.input-div {
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: -30px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 15px;
+    left: 15px;
+    display: block;
+    height: 23px;
+    cursor: pointer;
+}
+
+.start-exploring {
+    color: #2e2e2f;
+}
+
+.movie-content {
+    height: 55vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    height: 90px;
+    width: 100px;
+}
+
+.start-exploring {
+    font-size: 1.5em;
+}
