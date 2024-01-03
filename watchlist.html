@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch list</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@100;400;500&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Watch list</title>
+        <link rel="stylesheet" href="watchlist.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@100;400;500&family=Shadows+Into+Light&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header class="header">
+            <img src="./images/header.jpg" alt="" class="header-img" />
+            <div class="header-text">
+                <h1 class="title">My Watchlist</h1>
+                <a href="./index.html" class="search-for-movies"
+                    >Search for movies</a
+                >
+            </div>
+        </header>
+
+        <main class="main-section">
+            <div class="main-section-empty-state">
+                <p class="your-watchlist">
+                    Your watchlist is looking a little empty...
+                </p>
+                <div class="add-btn-div">
+                    <img
+                        src="./images/add.png"
+                        alt=""
+                        class="add-img"
+                        id="add-img"
+                    />
+                    <label for="add-img" class="add-movies"
+                        >Let's add some movies!</label
+                    >
+                </div>
+            </div>
+        </main>
+    </body>
 </html>

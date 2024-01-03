@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Search Page</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="index.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -17,7 +17,7 @@
             <img src="./images/header.jpg" alt="" class="header-img" />
             <div class="header-text">
                 <h1 class="title">Find your film</h1>
-                <h3 class="my-watchlist">My Watchlist</h3>
+                <a href="./watchlist.html" class="my-watchlist">My Watchlist</a>
             </div>
             <div class="input-div">
                 <label for="input"
@@ -28,14 +28,17 @@
                 /></label>
                 <input type="text" id="input" placeholder="Enter Movie Title" />
                 <button class="btn">Search</button>
-            </div>
+            </div>  
+        </header>
 
+        <main class="main-section">
             <div class="movie-content">
                 <img src="./images/Icon.png" alt="" class="img" />
                 <p class="start-exploring">Start exploring</p>
             </div>
-        </header>
+        </main>
+       
 
-        <script src="index.html"></script>
+        <script src="main.js"></script>
     </body>
 </html>

@@ -1,0 +1,80 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+}
+
+.header {
+    margin-top: -70px;
+}
+
+.header-img {
+    height: 450px;
+    width: 100vw;
+    opacity: 0.1;
+    position: relative;
+}
+
+.header-text {
+    z-index: 1000;
+    color: rgb(211, 211, 211);
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    display: flex;
+    gap: 14em;
+    justify-content: space-between;
+    align-items: center;
+    top: 130px;
+}
+
+.title {
+    z-index: 1000;
+    margin-left: 100px;
+    font-size: 4em;
+    color: rgb(211, 211, 211);
+}
+
+a {
+    color: rgb(211, 211, 211);
+    text-decoration: none;
+    font-size: 1.2em;
+    margin-right: 100px;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.main-section {
+    margin-top: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.add-btn-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.add-img {
+    height: 20px;
+    cursor: pointer;
+}
+
+.your-watchlist {
+    color: #787878;
+    font-size: 1.5em;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.add-movies {
+    color: rgb(255, 254, 254);
+    font-size: 1.2em;
+    cursor: pointer;
+}

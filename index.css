@@ -9,18 +9,19 @@ body {
 }
 
 .header {
-    margin-top: -80px;
+    margin-top: -70px;
 }
 
 .header-img {
-    height: 500px;
+    height:450px;
     width: 100vw;
     opacity: 0.1;
     position: relative;
+   
 }
 
 .header-text {
-    color: white;
+    color: rgb(211, 211, 211);
     width: 100%;
     position: absolute;
     display: flex;
@@ -38,6 +39,12 @@ body {
     margin-right: 100px;
     letter-spacing: 1px;
     font-weight: 500;
+}
+
+a {
+    color: rgb(211, 211, 211);
+    text-decoration: none;
+    font-size: 1.2em;
 }
 
 input {
