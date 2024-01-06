@@ -2,18 +2,19 @@
 const movieInput = document.querySelector('#input');
 const searchBtn = document.querySelector('.btn');
 
+const savedMovies = getFromLocalStorage('savedMovies') || [];
 
+export default {savedMovies}
 
+// searchBtn.addEventListener('click', () => {
+//     reload();
+//     searchDatabase();
+//     movieInput.value = '';
+// });
 
-searchBtn.addEventListener('click', () => {
-    reload()
-    searchDatabase();
-    movieInput.value = ''
-});
+let addToWatchlist;
 
-let addToWatchlist
-
-export const savedMovies = []
+// export const savedMovies = getFromLocalStorage('savedMovies') || []
 
 function searchDatabase() {
     fetch(`http://www.omdbapi.com/?apikey=10016d75&t&s=${movieInput.value}`)
@@ -25,41 +26,45 @@ function searchDatabase() {
                 )
                     .then((res) => res.json())
                     .then((data) => {
-                        console.log(data)
+                        console.log(data);
 
                         displayResults(data);
 
                         addToWatchlist.addEventListener('click', () => {
                             // data.imbdTD is the id for each movie that is clicked
-                            
-                            addMovie(data)
-                           
-                            //functions to add movies to yur library on a different html page
-                            console.log(savedMovies)
-                        })
 
+                            addMovie(data);
+
+                            //functions to add movies to yur library on a different html page
+                            console.log(savedMovies);
+                        });
                     });
             });
         });
 }
 
-//function to add movies that are clicked on to get saved to saved movies
+// save movie ids that are clicked on to local storage
 function addMovie(data) {
-    console.log(data.imdbID)
-
-    savedMovies.push(data.imdbID)
+    savedMovies.push(data.imdbID);
+    saveToLocalStorage('savedMovies', savedMovies);
 }
 
- // add movies to an array
-    // export that array to new file
-    // display saved movies
+console.log(savedMovies);
 
+// saved to local storage function
+function saveToLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
 
+// get from local storage function
+function getFromLocalStorage(key) {
+    const dataString = localStorage.getItem(key);
+    return JSON.parse(dataString);
+}
 
 function reload() {
     const mainSection = document.querySelector('.main-section');
-    mainSection.textContent = ''
-
+    mainSection.textContent = '';
 }
 
 function displayResults(dataResults) {
@@ -140,6 +145,7 @@ function displayResults(dataResults) {
     span.appendChild(addToWatchlist);
     span.appendChild(label);
 
+
     //movie description
     const movieDescriptionDiv = document.createElement('div');
     movieDescriptionDiv.className = 'movie-description';
@@ -153,7 +159,16 @@ function displayResults(dataResults) {
     const hr = document.createElement('hr');
 
     mainSection.appendChild(hr);
-    
 }
 
+
+//  export default function add (a , b) {
+//     return a + b
+// }
+
+// searchBtn.addEventListener('click', () => {
+//     reload();
+//     searchDatabase();
+//     movieInput.value = '';
+// });
 
