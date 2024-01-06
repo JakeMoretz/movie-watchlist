@@ -1,20 +1,17 @@
 // const apiKey = 10016d75
+
 const movieInput = document.querySelector('#input');
-const searchBtn = document.querySelector('.btn');
+export const searchBtn = document.querySelector('.btn');
 
-const savedMovies = getFromLocalStorage('savedMovies') || [];
+export const savedMovies = getFromLocalStorage('savedMovies') || [];
 
-export default {savedMovies}
-
-// searchBtn.addEventListener('click', () => {
-//     reload();
-//     searchDatabase();
-//     movieInput.value = '';
-// });
+searchBtn.addEventListener('click', () => {
+    reload();
+    searchDatabase();
+    movieInput.value = '';
+});
 
 let addToWatchlist;
-
-// export const savedMovies = getFromLocalStorage('savedMovies') || []
 
 function searchDatabase() {
     fetch(`http://www.omdbapi.com/?apikey=10016d75&t&s=${movieInput.value}`)
@@ -36,7 +33,7 @@ function searchDatabase() {
                             addMovie(data);
 
                             //functions to add movies to yur library on a different html page
-                            console.log(savedMovies);
+                            // console.log(savedMovies);
                         });
                     });
             });
@@ -49,7 +46,7 @@ function addMovie(data) {
     saveToLocalStorage('savedMovies', savedMovies);
 }
 
-console.log(savedMovies);
+// console.log(savedMovies);
 
 // saved to local storage function
 function saveToLocalStorage(key, data) {
@@ -145,7 +142,6 @@ function displayResults(dataResults) {
     span.appendChild(addToWatchlist);
     span.appendChild(label);
 
-
     //movie description
     const movieDescriptionDiv = document.createElement('div');
     movieDescriptionDiv.className = 'movie-description';
@@ -160,15 +156,3 @@ function displayResults(dataResults) {
 
     mainSection.appendChild(hr);
 }
-
-
-//  export default function add (a , b) {
-//     return a + b
-// }
-
-// searchBtn.addEventListener('click', () => {
-//     reload();
-//     searchDatabase();
-//     movieInput.value = '';
-// });
-
