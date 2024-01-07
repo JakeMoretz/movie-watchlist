@@ -49,9 +49,10 @@ a {
 }
 
 .main-section {
-    margin-top: 25%;
+    /* margin-top: 25%; */
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 .add-btn-div {
@@ -82,3 +83,92 @@ a {
 .btn {
     visibility: hidden;
 }
+
+/* movie card */
+
+.movie-card {
+    /* border: 1px solid red; */
+    color: white;
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.movie-img {
+    height: 300px;
+    width: 200px;
+    border-radius: 3px;
+    margin-right: 30px;
+}
+
+/* Title Section */
+
+.title-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.movie-title {
+    font-weight: 300;
+    margin: 0;
+    color: rgb(219, 219, 217);
+}
+
+.star-icon {
+    height: 25px;
+    margin: 0;
+}
+
+.rating {
+    padding-top: 5px;
+    margin: 0;
+    color: rgb(183, 183, 183);
+}
+
+/* Movie time and genre section */
+
+.movie-length-div {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    color: rgb(183, 183, 183);
+}
+
+span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    cursor: pointer;
+}
+
+span > label {
+    cursor: pointer;
+}
+
+.add-to-watchlist {
+    height: 20px;
+}
+
+/* Movie description */
+
+.movie-description > p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: rgb(151, 151, 151, 0.6);
+    line-height: 1.5;
+}
+
+hr {
+    width: 80%;
+    background-color: rgba(176, 176, 176, 0.2);
+    height: 1px;
+    border: none;
+}
+
