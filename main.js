@@ -28,12 +28,7 @@ function searchDatabase() {
                         displayResults(data);
 
                         addToWatchlist.addEventListener('click', () => {
-                            // data.imbdTD is the id for each movie that is clicked
-
                             addMovie(data);
-
-                            //functions to add movies to yur library on a different html page
-                            // console.log(savedMovies);
                         });
                     });
             });
@@ -46,15 +41,13 @@ function addMovie(data) {
     saveToLocalStorage('savedMovies', savedMovies);
 }
 
-// console.log(savedMovies);
-
 // saved to local storage function
-function saveToLocalStorage(key, data) {
+export function saveToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
 // get from local storage function
-function getFromLocalStorage(key) {
+export function getFromLocalStorage(key) {
     const dataString = localStorage.getItem(key);
     return JSON.parse(dataString);
 }
@@ -156,3 +149,19 @@ function displayResults(dataResults) {
 
     mainSection.appendChild(hr);
 }
+
+function defaultDisplay() {
+    const mainSection = document.querySelector('.main-section')
+    const movieCard = document.querySelector('.movie-card')
+
+    if (!movieCard) {
+        console.log('empty')
+        
+        // work on this
+       
+    }
+
+    
+}
+
+defaultDisplay()

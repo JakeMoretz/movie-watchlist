@@ -1,6 +1,6 @@
-import { savedMovies, searchBtn } from './main.js';
+import { savedMovies, searchBtn, saveToLocalStorage } from './main.js';
 
-let removeFromWatchlist
+let removeFromWatchlist;
 
 searchBtn.addEventListener('click', () => {
     reload();
@@ -8,34 +8,35 @@ searchBtn.addEventListener('click', () => {
     movieInput.value = '';
 });
 
-
 function displaySavedMovies() {
     savedMovies.forEach((result) => {
         fetch(`http://www.omdbapi.com/?apikey=10016d75&t&i=${result}`)
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data);
-
-                displayResults(data)
+                displayResults(data);
 
                 removeFromWatchlist.addEventListener('click', () => {
-                    console.log("clicked")
-                    removeClickedMovie()
-                })
-                
+                    const indexToRemove = savedMovies.findIndex(
+                        (movie) => movie === data.imdbID
+                    );
+
+                    if (indexToRemove !== -1) {
+                        savedMovies.splice(indexToRemove, 1);
+                    }
+
+                    const movieCardToRemove = document.querySelector(
+                        `.movie-container[data-id="${data.imdbID}"]`
+                    );
+
+                    if (movieCardToRemove) {
+                        movieCardToRemove.remove();
+                    }
+
+                    saveToLocalStorage('savedMovies', savedMovies);
+                });
             });
     });
 }
-
-function removeClickedMovie(index) {
-    savedMovies.slice(index, 1)
-    console.log(savedMovies)
-}
-
-console.log(savedMovies)
-
-
-
 
 function displayResults(dataResults) {
     //main section
@@ -106,7 +107,7 @@ function displayResults(dataResults) {
     // append to span
     removeFromWatchlist = document.createElement('img');
     removeFromWatchlist.className = 'add-to-watchlist';
-    removeFromWatchlist.id = 'remove-from-watchlist'
+    removeFromWatchlist.id = 'remove-from-watchlist';
     removeFromWatchlist.src = './images/remove.png';
 
     const label = document.createElement('label');
@@ -127,8 +128,40 @@ function displayResults(dataResults) {
     movieDescriptionDiv.appendChild(moviePlot);
 
     const hr = document.createElement('hr');
+    hr.className = 'line';
 
     mainSection.appendChild(hr);
+
+    const hrDiv = document.createElement('div');
+    hrDiv.className = 'hr-div';
+
+    const movieContainer = document.createElement('div');
+    movieContainer.className = 'movie-container';
+    movieContainer.setAttribute('data-id', dataResults.imdbID);
+
+    movieContainer.appendChild(movieCard);
+
+    mainSection.appendChild(movieContainer);
+
+    movieContainer.appendChild(hrDiv);
+
+    hrDiv.appendChild(hr);
 }
+
+function defaultDisplay() {
+    const movieContainer = document.querySelector('.movie-container')
+    const movieCard = document.querySelector('.movie-card')
+
+    if (!movieContainer) {
+        console.log('ahhh')
+
+        // work on this
+       
+    }
+
+    
+}
+
+defaultDisplay()
 
 displaySavedMovies();
