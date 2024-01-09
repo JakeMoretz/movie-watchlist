@@ -22,7 +22,6 @@ function searchDatabase() {
                 )
                     .then((res) => res.json())
                     .then((data) => {
-                        
                         displayResults(data);
 
                         addToWatchlist.addEventListener('click', () => {
@@ -151,6 +150,8 @@ function displayResults(dataResults) {
 function defaultDisplay() {
     const mainSection = document.querySelector('.main-section');
     const movieContent = document.querySelector('.movie-content');
+
+    console.log(mainSection);
 
     if (!mainSection) {
         movieContent.style.display = 'none';

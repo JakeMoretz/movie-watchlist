@@ -2,8 +2,6 @@ import { savedMovies, searchBtn, saveToLocalStorage } from './main.js';
 
 const addBtn = document.querySelector('.add-img');
 
-// let removeFromWatchlist;
-
 searchBtn.addEventListener('click', () => {
     reload();
     searchDatabase();
@@ -41,6 +39,8 @@ function displaySavedMovies() {
                     }
 
                     saveToLocalStorage('savedMovies', savedMovies);
+
+                    location.reload();
                 });
             });
     });
@@ -157,15 +157,12 @@ function displayResults(dataResults) {
 }
 
 function defaultDisplayPageTwo() {
-    const mainSectionTwo = document.querySelector('.main-section-two');
-    const mainSectionEmptyState = document.querySelector(
+    const mainSectionEmpty = document.querySelector(
         '.main-section-empty-state'
     );
-    
-
-    if (mainSectionTwo) {
-        console.log('page-2');
-        mainSectionEmptyState.style.display = 'none';
+ 
+    if (savedMovies.length > 0) {
+        mainSectionEmpty.style.display = 'none';
     }
 }
 
