@@ -1,12 +1,20 @@
 import { savedMovies, searchBtn, saveToLocalStorage } from './main.js';
 
-let removeFromWatchlist;
+const addBtn = document.querySelector('.add-img');
+
+// let removeFromWatchlist;
 
 searchBtn.addEventListener('click', () => {
     reload();
     searchDatabase();
     movieInput.value = '';
 });
+
+addBtn.addEventListener('click', () => {
+    window.location.href = './index.html';
+});
+
+let removeFromWatchlist;
 
 function displaySavedMovies() {
     savedMovies.forEach((result) => {
@@ -40,13 +48,13 @@ function displaySavedMovies() {
 
 function displayResults(dataResults) {
     //main section
-    const mainSection = document.querySelector('.main-section');
+    const mainSectionTwo = document.querySelector('.main-section-two');
 
     //movie card
     const movieCard = document.createElement('div');
     movieCard.className = 'movie-card';
 
-    mainSection.appendChild(movieCard);
+    mainSectionTwo.appendChild(movieCard);
 
     // movies poster
     const movieImg = document.createElement('img');
@@ -130,7 +138,7 @@ function displayResults(dataResults) {
     const hr = document.createElement('hr');
     hr.className = 'line';
 
-    mainSection.appendChild(hr);
+    mainSectionTwo.appendChild(hr);
 
     const hrDiv = document.createElement('div');
     hrDiv.className = 'hr-div';
@@ -141,27 +149,26 @@ function displayResults(dataResults) {
 
     movieContainer.appendChild(movieCard);
 
-    mainSection.appendChild(movieContainer);
+    mainSectionTwo.appendChild(movieContainer);
 
     movieContainer.appendChild(hrDiv);
 
     hrDiv.appendChild(hr);
 }
 
-function defaultDisplay() {
-    const movieContainer = document.querySelector('.movie-container')
-    const movieCard = document.querySelector('.movie-card')
-
-    if (!movieContainer) {
-        console.log('ahhh')
-
-        // work on this
-       
-    }
-
+function defaultDisplayPageTwo() {
+    const mainSectionTwo = document.querySelector('.main-section-two');
+    const mainSectionEmptyState = document.querySelector(
+        '.main-section-empty-state'
+    );
     
+
+    if (mainSectionTwo) {
+        console.log('page-2');
+        mainSectionEmptyState.style.display = 'none';
+    }
 }
 
-defaultDisplay()
+defaultDisplayPageTwo();
 
 displaySavedMovies();

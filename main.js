@@ -1,6 +1,7 @@
-// const apiKey = 10016d75
-
 const movieInput = document.querySelector('#input');
+
+let addToWatchlist;
+
 export const searchBtn = document.querySelector('.btn');
 
 export const savedMovies = getFromLocalStorage('savedMovies') || [];
@@ -10,8 +11,6 @@ searchBtn.addEventListener('click', () => {
     searchDatabase();
     movieInput.value = '';
 });
-
-let addToWatchlist;
 
 function searchDatabase() {
     fetch(`http://www.omdbapi.com/?apikey=10016d75&t&s=${movieInput.value}`)
@@ -23,8 +22,7 @@ function searchDatabase() {
                 )
                     .then((res) => res.json())
                     .then((data) => {
-                        console.log(data);
-
+                        
                         displayResults(data);
 
                         addToWatchlist.addEventListener('click', () => {
@@ -151,17 +149,12 @@ function displayResults(dataResults) {
 }
 
 function defaultDisplay() {
-    const mainSection = document.querySelector('.main-section')
-    const movieCard = document.querySelector('.movie-card')
+    const mainSection = document.querySelector('.main-section');
+    const movieContent = document.querySelector('.movie-content');
 
-    if (!movieCard) {
-        console.log('empty')
-        
-        // work on this
-       
+    if (!mainSection) {
+        movieContent.style.display = 'none';
     }
-
-    
 }
 
-defaultDisplay()
+defaultDisplay();
