@@ -14,7 +14,7 @@ body {
 
 .header-img {
     height: 450px;
-    width: 100vw;
+    width: 100%;
     opacity: 0.1;
     position: relative;
 }
@@ -32,12 +32,17 @@ body {
 .title {
     margin-left: 100px;
     font-size: 4em;
+    font-weight: 500;
 }
 
 .my-watchlist {
     margin-right: 100px;
     letter-spacing: 1px;
     font-weight: 500;
+}
+
+.my-watchlist:hover {
+    color: rgb(255, 255, 255);
 }
 
 a {
@@ -48,7 +53,8 @@ a {
 
 input {
     width: 100%;
-    background-color: #39393a;
+    /* background-color: #39393a; */
+    background-color: #0e0e0e;
     z-index: 1000;
     border: none;
     color: rgb(182, 180, 180);
@@ -59,21 +65,29 @@ input {
     font-family: 'Inter', sans-serif;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    border: 1px solid rgb(122, 122, 122);
 }
 
 .btn {
     width: 200px;
-    background-color: #5e5d5d;
+    background-color: #141414;
     z-index: 1000;
-    color: white;
+    color: rgb(211, 211, 211);
     border: none;
     font-size: 1.2em;
-    font-weight: 300;
+    font-weight: 500;
     letter-spacing: 1px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    border: 2px solid rgb(122, 122, 122);
+}
+
+.btn:hover {
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
 }
 
 .input-div {
@@ -100,6 +114,8 @@ input {
 
 .start-exploring {
     color: #2e2e2f;
+    font-weight: 600;
+   
 }
 
 .movie-content {
