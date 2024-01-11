@@ -100,6 +100,10 @@ a:hover {
     visibility: hidden;
 }
 
+#input {
+    visibility: hidden;
+}
+
 /* movie card */
 
 .movie-card {

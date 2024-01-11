@@ -12,6 +12,7 @@ addBtn.addEventListener('click', () => {
     window.location.href = './index.html';
 });
 
+
 let removeFromWatchlist;
 
 function displaySavedMovies() {

@@ -82,6 +82,7 @@ input {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border: 2px solid rgb(122, 122, 122);
+    
 }
 
 .btn:hover {
@@ -104,7 +105,7 @@ input {
 
 .search-icon {
     position: absolute;
-    z-index: 9999;
+    z-index: 2000;
     top: 15px;
     left: 15px;
     display: block;
@@ -149,6 +150,7 @@ input {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+    position: relative;
 }
 
 .movie-img {
@@ -224,4 +226,14 @@ hr {
     background-color: rgba(176, 176, 176, 0.2);
     height: 1px;
     border: none;
+}
+
+.alert-modal {
+    /* display: hidden; */
+    /* z-index: 9999;
+    background-color: pink;
+    height: 30px;
+    width: 30px;
+    position: absolute */
+    color: white;
 }

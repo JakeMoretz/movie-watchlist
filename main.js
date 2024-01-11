@@ -6,6 +6,14 @@ export const searchBtn = document.querySelector('.btn');
 
 export const savedMovies = getFromLocalStorage('savedMovies') || [];
 
+movieInput.addEventListener('input', () => {
+    if (movieInput.value.length > 0) {
+        searchBtn.disabled = false;
+    } else {
+        searchBtn.disabled = true;
+    }
+});
+
 searchBtn.addEventListener('click', () => {
     reload();
     searchDatabase();
@@ -26,6 +34,7 @@ function searchDatabase() {
 
                         addToWatchlist.addEventListener('click', () => {
                             addMovie(data);
+                            addMovieAlert(data)
                         });
                     });
             });
@@ -151,11 +160,28 @@ function defaultDisplay() {
     const mainSection = document.querySelector('.main-section');
     const movieContent = document.querySelector('.movie-content');
 
-    console.log(mainSection);
-
     if (!mainSection) {
         movieContent.style.display = 'none';
     }
 }
+
+// function addMovieAlert(data) {
+//     const movieDescriptionDiv = document.querySelector('movie-description')
+
+//     const alertModal = document.createElement('div')
+//     alertModal.className = 'alert-modal'
+//     alertModal.style.display = 'block'
+
+//     const modalText = document.createElement('p')
+//     modalText.textContent = `You have added ${data.Title} to your watchlist!`
+//     modalText.className = 'modal-text'
+
+//     alertModal.appendChild(modalText)
+//     movieDescriptionDiv.appendChild(alertModal)
+
+
+// }
+
+
 
 defaultDisplay();
