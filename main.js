@@ -34,7 +34,9 @@ function searchDatabase() {
 
                         addToWatchlist.addEventListener('click', () => {
                             addMovie(data);
-                            addMovieAlert(data)
+                            addTimeout(data);
+
+                            setTimeout(removeMovieAlert, 4000);
                         });
                     });
             });
@@ -165,23 +167,23 @@ function defaultDisplay() {
     }
 }
 
-// function addMovieAlert(data) {
-//     const movieDescriptionDiv = document.querySelector('movie-description')
+let timeout;
 
-//     const alertModal = document.createElement('div')
-//     alertModal.className = 'alert-modal'
-//     alertModal.style.display = 'block'
+function addTimeout(data) {
+    let timeout = setTimeout(movieAddAlert(data), 500);
+}
 
-//     const modalText = document.createElement('p')
-//     modalText.textContent = `You have added ${data.Title} to your watchlist!`
-//     modalText.className = 'modal-text'
+function removeMovieAlert() {
+    const modalDiv = document.querySelector('.modal-div');
+    modalDiv.style.display = 'none';
+}
 
-//     alertModal.appendChild(modalText)
-//     movieDescriptionDiv.appendChild(alertModal)
+function movieAddAlert(data) {
+    const modalDiv = document.querySelector('.modal-div');
+    modalDiv.style.display = 'block';
 
-
-// }
-
-
+    const modalText = document.querySelector('.modal-text');
+    modalText.textContent = `You have added ${data.Title} to your watchlist!`;
+}
 
 defaultDisplay();

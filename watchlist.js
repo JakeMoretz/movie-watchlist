@@ -12,7 +12,6 @@ addBtn.addEventListener('click', () => {
     window.location.href = './index.html';
 });
 
-
 let removeFromWatchlist;
 
 function displaySavedMovies() {
@@ -41,7 +40,11 @@ function displaySavedMovies() {
 
                     saveToLocalStorage('savedMovies', savedMovies);
 
-                    location.reload();
+                    addTimeout(data);
+
+                    setTimeout(exitTimeout, 4000);
+
+                    setTimeout(reloadPage, 4000);
                 });
             });
     });
@@ -161,9 +164,34 @@ function defaultDisplayPageTwo() {
     const mainSectionEmpty = document.querySelector(
         '.main-section-empty-state'
     );
- 
+
     if (savedMovies.length > 0) {
         mainSectionEmpty.style.display = 'none';
+    }
+}
+
+let timeout;
+
+function addTimeout(data) {
+    let timeout = setTimeout(movieRemoveAlert(data), 500);
+}
+
+function exitTimeout() {
+    const removeModalDiv = document.querySelector('.remove-modal-div');
+    removeModalDiv.style.display = 'none';
+}
+
+function movieRemoveAlert(data) {
+    const removeModalDiv = document.querySelector('.remove-modal-div');
+    removeModalDiv.style.display = 'block';
+
+    const removeModalText = document.querySelector('.remove-modal-text');
+    removeModalText.textContent = `You have removed ${data.Title} from your watchlist`;
+}
+
+function reloadPage() {
+    if (savedMovies.length === 0) {
+        location.reload();
     }
 }
 
