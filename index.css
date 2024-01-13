@@ -30,13 +30,13 @@ body {
 }
 
 .title {
-    margin-left: 100px;
+    margin-left: 5rem;
     font-size: 4em;
     font-weight: 500;
 }
 
 .my-watchlist {
-    margin-right: 100px;
+    margin-right: 5rem;
     letter-spacing: 1px;
     font-weight: 500;
 }
@@ -90,7 +90,7 @@ input {
 }
 
 .input-div {
-    width: 80%;
+    /* width: 80%; */
     height: 50px;
     display: flex;
     justify-content: space-between;
@@ -99,6 +99,8 @@ input {
     border-radius: 6px;
     position: relative;
     margin-bottom: 60px;
+    margin-left: 5em;
+    margin-right: 5em;
 }
 
 .search-icon {
@@ -255,4 +257,118 @@ hr {
 .modal-text {
     text-align: center;
     font-size: 1.3em;
+}
+
+@media (max-width: 1000px) {
+    .header-text {
+        width: 80%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-left: 4em;
+        margin-right: auto;
+    }
+
+    .input-div {
+        margin-right: 4em;
+        margin-left: 4em;
+    }
+
+    .title {
+        margin-left: 0;
+        font-size: 3em;
+    }
+
+    .movie-content {
+        justify-content: flex-start;
+        margin-top: 150px;
+    }
+
+    .movie-card {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie-img {
+        margin: 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .modal-text {
+        text-align: center;
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-text {
+        margin-left: 2em;
+    }
+
+    .input-div {
+        margin-right: 2em;
+        margin-left: 2em;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+
+    .btn {
+        font-size: 1em;
+    }
+
+    .movie-time {
+        display: none;
+    }
+
+    .modal-text {
+        text-align: center;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-text {
+        margin-left: 1em;
+        top: 100px;
+    }
+
+    .input-div {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+
+    input {
+        font-size: 1em;
+        padding-left: 1em;
+    }
+
+    .search-icon {
+        display: none;
+    }
+
+    .title {
+        font-size: 1.85em;
+    }
+
+    .header-img {
+        height: 350px;
+    }
+
+    .movie-length-div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .movie-time {
+        display: none;
+    }
+
+    span {
+        margin-bottom: 20px;
+    }
 }
