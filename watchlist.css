@@ -196,37 +196,50 @@ hr {
     display: none;
 }
 
-.remove-modal-div {
-    color: white;
-    background-color: #0e0e0e;
-    border: 1px solid rgb(122, 122, 122);
-    height: 30px;
-    z-index: 9999;
-    position: fixed;
-    margin: auto;
-    width: 80vw;
-    top: 10;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 10px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding-bottom: 40px;
-    align-items: center;
-    border-top-left-radius: 15px;
-    display: none;
-}
-
 .show-modal {
     display: block;
 }
 
 .remove-modal-text {
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
+.remove-modal-div {
+    color: white;
+    background-color: #0e0e0e;
+    border: 1px solid rgb(122, 122, 122);
+    z-index: 9999;
+    position: fixed;
+    margin: auto;
+    width: 80vw;
+    top: 10;
+    right: 0;
+    bottom: 10;
+    left: 0;
+    padding: 2rem;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 15px;
+    border-radius: 8px;
+    display: none;
+}
+
+.modal-text-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-show {
+    display: block;
+}
+
+.modal-text-div {
+    text-align: center;
+    font-size: 1em;
+    color: #c7c7c7;
+}
 /* media queries */
 
 @media (max-width: 1000px) {
@@ -300,20 +313,50 @@ hr {
         margin-inline: 2rem;
         font-size: 1.3rem;
         margin-bottom: 40px;
-    }
-
-    .add-btn-div {
-        width: 100%;
-        align-items: flex-start;
-    }
-
-    .add-btn-div {
-        justify-content: flex-start;
-        margin-left: 2rem;
+        text-align: center;
     }
 
     .main-section-empty-state {
-        align-items: flex-start;
+        height: 20vh;
+    }
+
+    .your-watchlist {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-img {
+        height: 300px;
+    }
+
+    .title {
+        font-size: 1.85em;
+    }
+
+    .header-text {
+        top: 50px;
+    }
+
+    .movie-content {
+        margin-top: 50px;
+    }
+
+    .modal-text {
+        font-size: 1em;
+    }
+
+    .movie-content {
+        justify-content: flex-start;
+        margin-top: 50px;
+    }
+
+    .main-section-empty-state {
+        height: 20vh;
+    }
+
+    .your-watchlist {
+        font-size: 1.1em;
     }
 }
 
@@ -342,7 +385,7 @@ hr {
     }
 
     .header-img {
-        height: 350px;
+        height: 300px;
     }
 
     .movie-length-div {
@@ -359,18 +402,7 @@ hr {
         margin-bottom: 20px;
     }
 
-    .your-watchlist {
-        margin-inline: 1rem;
-        font-size: 1.2rem;
-        margin-bottom: 40px;
-    }
-
-    .add-btn-div {
-        justify-content: flex-start;
-        margin-left: 1rem;
-    }
-
-    .main-section-empty-state {
-        align-items: flex-start;
+    .header-text {
+        top: 30px;
     }
 }
