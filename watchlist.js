@@ -16,7 +16,7 @@ let removeFromWatchlist;
 
 function displaySavedMovies() {
     savedMovies.forEach((result) => {
-        fetch(`http://www.omdbapi.com/?apikey=10016d75&t&i=${result}`)
+        fetch(`https://www.omdbapi.com/?apikey=10016d75&t&i=${result}`)
             .then((res) => res.json())
             .then((data) => {
                 displayResults(data);

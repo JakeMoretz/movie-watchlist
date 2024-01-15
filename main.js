@@ -21,12 +21,12 @@ searchBtn.addEventListener('click', () => {
 });
 
 function searchDatabase() {
-    fetch(`http://www.omdbapi.com/?apikey=10016d75&t&s=${movieInput.value}`)
+    fetch(`https://www.omdbapi.com/?apikey=10016d75&t&s=${movieInput.value}`)
         .then((res) => res.json())
         .then((data) => {
             data.Search.forEach((result) => {
                 fetch(
-                    `http://www.omdbapi.com/?apikey=10016d75&t&t=${result.Title}&y&plot=short`
+                    `https://www.omdbapi.com/?apikey=10016d75&t&t=${result.Title}&y&plot=short`
                 )
                     .then((res) => res.json())
                     .then((data) => {
